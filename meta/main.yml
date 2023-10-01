@@ -3,23 +3,12 @@ dependencies: []
 
 galaxy_info:
   role_name: logstash
-  author: geerlingguy
-  description: Logstash for Linux.
-  company: "Midwestern Mac, LLC"
-  license: "license (BSD, MIT)"
+  author: Muhamamd Furqan
+  description: Logstash for Linux
   min_ansible_version: 2.10
   platforms:
-    - name: Debian
+    - name: Rehat
       versions:
-        - all
-    - name: Ubuntu
-      versions:
-        - all
-  galaxy_tags:
-    - web
-    - system
-    - monitoring
-    - logging
-    - logs
-    - elk
-    - logstash
+        - 7
+        - 8
+
