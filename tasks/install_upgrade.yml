@@ -1,0 +1,21 @@
+---
+- name: Download logstash Package 
+  get_url:
+     url: "https://artifacts.elastic.co/downloads/logstash/logstash-{{ logstash_version }}-x86_64.rpm"
+     dest: "/var/tmp"
+  register: download_result
+
+ - name: Check if RPM Package is Downloaded Successfully
+   debug:
+     var: download_result
+
+- name: Check if Logstash is installed
+  stat:
+    path: "{{ logstash_install_dir }}/bin/logstash"
+  register: logstash_installed
+
+- name: Install or upgrade Logstash
+  yum:
+    name: "logstash-{{ logstash_version }}"
+    state: "{{ 'latest' if logstash_installed.stat.exists and logstash_version != logstash_installed.stat.size else 'present' }}"
+  become: true

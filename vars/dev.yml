@@ -1,0 +1,7 @@
+environment: "development"
+logstash_version: "7.14.0"
+logstash_config_dir: "/etc/logstash_dev"
+logstash_plugins:
+  - plugin_name: "logstash-input-beats"
+    t
+    version: "x.y.z"

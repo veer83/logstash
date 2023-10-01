@@ -1,0 +1,19 @@
+---
+logstash_version: '8.5'
+
+logstash_package: logstash
+logstash_dir: /usr/share/logstash
+
+logstash_ssl_dir: /etc/pki/logstash
+
+logstash_enabled_on_boot: true
+
+
+logstash_setup_default_config: true
+
+logstash_data_path: /var/lib/logstash
+logstash_log_path:  /var/log/logstash
+
+logstash_http_host: "127.0.0.1"
+logstash_http_port: 9600
+log_level: "info"

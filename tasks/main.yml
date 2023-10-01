@@ -1,0 +1,18 @@
+---
+- name: Include Install and Upgrade Logstash
+  include: install_upgrade.yml
+
+- name: logstash config files
+  include: config.yml
+
+- name: logstash certificate deployment
+- include: ssl.yml
+
+- name: logstash plugin manage  
+- include: plugins.yml
+
+- name: Ensure Logstash is started and enabled on boot.
+  service:
+    name: logstash
+    state: started
+    enabled: "{{ logstash_enabled_on_boot }}"

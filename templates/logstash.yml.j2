@@ -1,0 +1,47 @@
+# ======================== Logstash Configuration =========================
+#
+# This file is used to configure various settings for Logstash.
+# For more information, consult the documentation:
+# https://www.elastic.co/guide/en/logstash/current/index.html
+#
+# ======================== Node =========================
+#
+node.name: {{ logstash_node_name }}
+
+# ======================== Paths =========================
+#
+# The directory where Logstash stores temporary files.
+path.data: {{ logstash_data_path }}
+
+# The directory where Logstash stores logs.
+path.logs: {{ logstash_log_path }}
+
+# ======================== Network =========================
+#
+# Set the address Logstash binds to.
+http.host: {{ logstash_http_host }}
+http.port: {{ logstash_http_port }}
+
+# ======================== Logging =========================
+#
+# Specify the log level (options: debug, info, warn, error, fatal).
+log.level: {{ log_level }}
+
+# ======================== X-Pack (Elastic Stack Security) Settings =========================
+#
+# X-Pack settings for Elastic Stack Management
+xpack.management.elasticsearch.username: "{{ xpack_management_username }}"
+# Read password from Logstash keystore
+xpack.management.elasticsearch.password: "keystore:your_keystore_password_key"
+# SSL settings
+xpack.ssl.certificate_authority: "{{ ssl_certificate_authority }}"
+xpack.ssl.verification_mode: "{{ ssl_verification_mode }}"
+
+# ======================== X-Pack (Elastic Stack Management) Settings =========================
+#
+xpack.management.enabled: true
+xpack.management.pipeline.id: [{{ pipeline_ids }}]
+
+# Monitor cluster UUID
+monitor.cluster_uuid: "{{ cluster_uuid }}"
+
