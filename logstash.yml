@@ -1,6 +1,6 @@
 ---
 - name: Apply logstash role for Development
-  host: localhost
+  hosts: localhost
   roles:
     - logstash
   vars_Files:
