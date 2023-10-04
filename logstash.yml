@@ -3,5 +3,5 @@
   hosts: localhost
   roles:
     - logstash
-  vars_Files:
+  vars:
     - ../vars/dev.yml
