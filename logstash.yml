@@ -4,4 +4,4 @@
   roles:
     - logstash
   vars:
-    - ../vars/dev.yml
+    - dev.yml
