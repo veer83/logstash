@@ -16,7 +16,7 @@
 
 - name: Install or upgrade Logstash
   yum:
-    name: "download_result.dest"
+    name: "{{ download_result.dest }}"
     state: "{{ 'latest' if logstash_installed.stat.exists and logstash_version != logstash_installed.stat.size else 'present' }}"
     disable_gpg_check: yes
   become: true
