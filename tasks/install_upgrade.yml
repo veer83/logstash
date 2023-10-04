@@ -16,6 +16,6 @@
 
 - name: Install or upgrade Logstash
   yum:
-    name: "logstash-{{ logstash_version }}"
+    name: /var/tmp/"logstash-{{ logstash_version }}"
     state: "{{ 'latest' if logstash_installed.stat.exists and logstash_version != logstash_installed.stat.size else 'present' }}"
   become: true
