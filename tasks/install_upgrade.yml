@@ -7,7 +7,7 @@
 
 - name: Check if RPM Package is Downloaded Successfully
   debug:
-    var: download_result.dest
+    var: download_result.destcd logs  
 
 - name: Check if Logstash is installed
   stat:
@@ -16,7 +16,7 @@
 
 - name: Install or upgrade Logstash
   yum:
-    name: "/var/tmp/logstash-{{ logstash_version }}-x86_64.rpm"
+    name: "download_result.dest"
     state: "{{ 'latest' if logstash_installed.stat.exists and logstash_version != logstash_installed.stat.size else 'present' }}"
     disable_gpg_check: yes
   become: true
