@@ -19,4 +19,5 @@
     name:  "/var/tmp/logstash-{{ logstash_version }}-x86_64.rpm"
     state: "{{ 'latest' if logstash_installed.stat.exists and logstash_version != logstash_installed.stat.size else 'present' }}"
   become: true
+  disable_gpg_keycheck: yes
   

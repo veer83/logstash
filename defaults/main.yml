@@ -1,5 +1,5 @@
 ---
-disable_gpg_keycheck: yes
+
 logstash_version: "8.10.2"
 
 logstash_package: logstash
