@@ -7,7 +7,7 @@
 
 - name: Check if RPM Package is Downloaded Successfully
   debug:
-    var: download_result.destcd logs  
+    var: download_result  
 
 - name: Check if Logstash is installed
   stat:
