@@ -1,0 +1,7 @@
+---
+- name: Apply logstash role for Development
+  host: localhost
+  roles:
+    - logstash
+  vars_Files:
+    - ../vars/dev.yml
