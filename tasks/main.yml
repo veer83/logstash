@@ -6,10 +6,10 @@
   include: config.yml
 
 - name: logstash certificate deployment
-- include: ssl.yml
+  include: ssl.yml
 
 - name: logstash plugin manage  
-- include: plugins.yml
+  include: plugins.yml
 
 - name: Ensure Logstash is started and enabled on boot.
   service:
