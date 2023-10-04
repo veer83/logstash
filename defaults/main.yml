@@ -2,7 +2,7 @@
 logstash_version: '8.5'
 
 logstash_package: logstash
-logstash_dir: /usr/share/logstash
+logstash_install_dir: /usr/share/logstash
 
 logstash_ssl_dir: /etc/pki/logstash
 
