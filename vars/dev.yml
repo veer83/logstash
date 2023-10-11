@@ -1,3 +1,4 @@
-environment: "development"
+env: "dev"
 
 logstash_config_dir: "/etc/logstash_dev"
+elastic_hostname: "https://elasticsearch_host:443"
