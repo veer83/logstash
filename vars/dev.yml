@@ -4,4 +4,4 @@ env: "dev"
 elastic_hostname: "https://elasticsearch_host:443"
 xpack_management_username: "logstash_user"
 cluster_uuid: "3456789"
-logstash_ssl_key_file: ../ssl/{{ env }}/test.certifcate
+logstash_ssl_key_file: "test.certifcate"
