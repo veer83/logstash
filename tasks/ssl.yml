@@ -14,4 +14,11 @@
     - "{{ logstash_ssl_key_file }}"
     - "{{ logstash_ssl_certificate_file }}"
   notify: restart logstash
+
+  - name: Copy SSL certificates
+  copy:
+    src: "ssl/{{ env }}"
+    dest: "{{ logstash_config_dir }}/ssl"
+  become: true
+  notify: restart logstash
   
