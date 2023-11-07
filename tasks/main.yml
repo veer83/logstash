@@ -10,7 +10,8 @@
 
 - name: logstash plugin manage  
   include: plugins.yml
-  when: logstash_plugins_list is defined
+  when: logstash_plugins_list is defined and logstash_install_plugins | default(false)
+  
 - name: Ensure Logstash is started and enabled on boot.
   service:
     name: logstash
