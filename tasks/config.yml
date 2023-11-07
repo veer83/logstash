@@ -6,3 +6,12 @@
   become: true
   notify: restart logstash
 
+- name: Create Logstash Keystore
+  command: "bin/logstash-keystore create --path {{ logstash_config_dir }}"
+  args:
+    chdir: "/etc/logstash" 
+  environment:
+    LS_HOME: "/usr/share/logstash"  # Replace with the actual path to your Logstash installation
+  become: yes
+  become_user: logstash  # Replace with the user running Logstash
+  register: keystore_result
