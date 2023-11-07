@@ -7,9 +7,9 @@
   notify: restart logstash
 
 - name: Create Logstash Keystore
-  command: bin/logstash-keystore create
+  command: /usr/share/logstash/bin/logstash-keystore create
   args:
-    chdir: "/etc/logstash" 
+    chdir: "/etc/logstash/logstash.keystore" 
   environment:
     LS_HOME: "/usr/share/logstash"  # Replace with the actual path to your Logstash installation
   become: yes
