@@ -10,7 +10,7 @@
   shell: /usr/share/logstash/bin/logstash-keystore --path.settings /etc/logstash/ list
   become: yes
   register: keystore_list
-  ignore_errors: yes
+  
 
 
 - name:  Setup Logstash keystore.
