@@ -7,7 +7,7 @@
   notify: restart logstash
 
 - name: Create Logstash Keystore
-  command: "bin/logstash-keystore create --path {{ logstash_config_dir }}"
+  command: bin/logstash-keystore create
   args:
     chdir: "/etc/logstash" 
   environment:
