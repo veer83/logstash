@@ -21,7 +21,7 @@ log.level: {{ log_level }}
 #
 xpack.management.enabled: true
 xpack.management.pipeline.id: [ "main", "*logs","test", *logs_{{ ansible_hostname }}]
-xpack.management.elasticsearch.hosts {{ elastic_hostname }}
+xpack.management.elasticsearch.hosts: ["{{ elastic_hostname }}"]
 xpack.management.elasticsearch.username: "{{ xpack_management_username }}"
 # Read password from Logstash keystore
 xpack.management.elasticsearch.password: "keystore:your_keystore_password_key"
