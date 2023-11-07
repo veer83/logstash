@@ -13,5 +13,4 @@
   environment:
     LS_HOME: "/usr/share/logstash"  # Replace with the actual path to your Logstash installation
   become: yes
-  become_user: logstash  # Replace with the user running Logstash
   register: keystore_result
