@@ -14,7 +14,7 @@ path.logs: {{ logstash_log_path }}
 
 # ======================== Logging =========================
 #
-# Specify the log level (options: debug, info, warn, error, fatal).
+# Specify the log level (options: debug, info, warn, error, fatal)
 log.level: {{ log_level }}
 
 # ======================== X-Pack Settings =========================
@@ -24,7 +24,7 @@ xpack.management.pipeline.id: [ "main", "*logs","test", *logs_{{ ansible_hostnam
 xpack.management.elasticsearch.hosts: ["{{ elastic_hostname }}"]
 xpack.management.elasticsearch.username: "{{ xpack_management_username }}"
 # Read password from Logstash keystore
-xpack.management.elasticsearch.password: "keystore:your_keystore_password_key"
+xpack.management.elasticsearch.password: "${elastic_pwd}"
 # SSL settings
 xpack.ssl.certificate_authority: "/etc/logstash/ssl/ca.crt"
 xpack.ssl.verification_mode: certificate
