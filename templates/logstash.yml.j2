@@ -7,20 +7,20 @@
 # ======================== Paths =========================
 #
 # The directory where Logstash stores temporary files.
-path.data: {{ logstash_data_path }}
+path.data: "{{ logstash_data_path }}"
 
 # The directory where Logstash stores logs.
-path.logs: {{ logstash_log_path }}
+path.logs: "{{ logstash_log_path }}"
 
 # ======================== Logging =========================
 #
 # Specify the log level (options: debug, info, warn, error, fatal)
-log.level: {{ log_level }}
+log.level: "{{ log_level }}"
 
 # ======================== X-Pack Settings =========================
 #
 xpack.management.enabled: true
-xpack.management.pipeline.id: [ "main", "*logs","test", *logs_{{ ansible_hostname }}]
+xpack.management.pipeline.id: [ "main", "*logs", "test", "*logs_{{ ansible_hostname }}" ]
 xpack.management.elasticsearch.hosts: ["{{ elastic_hostname }}"]
 xpack.management.elasticsearch.username: "{{ xpack_management_username }}"
 # Read password from Logstash keystore
