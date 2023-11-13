@@ -1,6 +1,6 @@
 ---
-- name: Include Install and Upgrade Logstash
-  include: install_upgrade.yml
+#- name: Include Install and Upgrade Logstash
+#  include: install_upgrade.yml
 
 - name: logstash config files
   include: config.yml
