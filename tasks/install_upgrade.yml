@@ -25,4 +25,5 @@
     state: "{{ 'latest' if not logstash_installed.stat.exists or logstash_version != logstash_installed.stat.size else 'present' }}"
     disable_gpg_check: yes
   become: true
-  when: download_result.changed
+  when: true
+
