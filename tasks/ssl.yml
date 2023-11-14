@@ -8,7 +8,7 @@
 - name: Copy SSL key and cert for logstash-forwarder.
   copy:
     src: "ssl/{{ env }}/{{ item }}"
-    dest: "{{ logstash_config_dir }}/ssl/{{ item | basename }}"
+    dest: "{{ logstash_ssl_dir }}/{{ item | basename }}"
     mode: 0644
   with_items:
     - "{{ logstash_ssl_key_file }}"
