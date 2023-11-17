@@ -6,7 +6,7 @@ cluster_uuid: "3456789"
 logstash_ssl_key_file: "test.certifcate"
 logstash_ssl_certificate_file: "test.certifcate"
 losgtash_keystore_password: "simplepassword"
-
+ furqan
 log4j
 [cloud_user@be3f9847191c logstash]$ cat log4j2.properties 
 status = error
