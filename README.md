@@ -1,5 +1,15 @@
 # Ansible Role: Logstash
 
+- name: Set capabilities for java executable
+  command: "setcap CAP_NET_BIND_SERVICE=+eip /usr/share/logstash/jdk/bin/java"
+
+- name: Create symbolic link for libjli.so
+  command: "ln -s /usr/share/logstash/jdk/lib/jli/libjli.so /usr/lib/"
+
+- name: Update dynamic linker run-time bindings
+  command: "ldconfig"
+
+
 [![CI](https://github.com/geerlingguy/ansible-role-logstash/workflows/CI/badge.svg?event=push)](https://github.com/geerlingguy/ansible-role-logstash/actions?query=workflow%3ACI)
 
 An Ansible Role that installs Logstash on RedHat/CentOS Debian/Ubuntu.
